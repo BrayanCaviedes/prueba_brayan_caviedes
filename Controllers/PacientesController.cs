@@ -36,16 +36,16 @@ namespace prueba_brayan_caviedes.Controllers
 
 
         [HttpPut]
-        [Route("Actualizar/{NumeroDocumento}")]
-        public async Task<IActionResult> Actualizar(int NumeroDocumento, [FromBody] Paciente request)
+        [Route("Actualizar/{Id}")]
+        public async Task<IActionResult> Actualizar(int Id, [FromBody] Paciente request)
         {
-            if (NumeroDocumento != request.NumeroDocumento)
+            if (Id != request.Id)
             {
-                return BadRequest("El NumeroDocumento no coincide con ningun Paciente.");
+                return BadRequest("El Id no coincide con ningun Paciente.");
             }
 
             // Buscar el Paciente en la base de datos
-            var pacienteExistente = await _baseDatos.Pacientes.FindAsync(NumeroDocumento);
+            var pacienteExistente = await _baseDatos.Pacientes.FindAsync(Id);
 
             // Si no se encuentra el Paciente, devolver un error 404 (No encontrado)
             if (pacienteExistente == null)
@@ -54,6 +54,7 @@ namespace prueba_brayan_caviedes.Controllers
             }
 
             // Actualizar las propiedades del Paciente existente con los valores del objeto request
+            pacienteExistente.NumeroDocumento = request.NumeroDocumento;
             pacienteExistente.TipoDocumento = request.TipoDocumento;
             pacienteExistente.Nombre = request.Nombre;
             pacienteExistente.Apellido = request.Apellido;
@@ -71,10 +72,10 @@ namespace prueba_brayan_caviedes.Controllers
 
 
         [HttpDelete]
-        [Route("Eliminar/{NumeroDocumento:int}")]
-        public async Task<IActionResult> Eliminar(int NumeroDocumento)
+        [Route("Eliminar/{Id:int}")]
+        public async Task<IActionResult> Eliminar(int Id)
         {
-            var pacientesEliminar = await _baseDatos.Pacientes.FindAsync(NumeroDocumento);
+            var pacientesEliminar = await _baseDatos.Pacientes.FindAsync(Id);
             
             if (pacientesEliminar == null)
             {

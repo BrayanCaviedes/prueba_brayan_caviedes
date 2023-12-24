@@ -5,6 +5,8 @@ namespace prueba_brayan_caviedes.Models;
 
 public partial class Paciente
 {
+    public int Id { get; set; }
+
     public int NumeroDocumento { get; set; }
 
     public string? TipoDocumento { get; set; }

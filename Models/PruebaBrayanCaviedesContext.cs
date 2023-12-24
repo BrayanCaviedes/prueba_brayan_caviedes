@@ -25,10 +25,13 @@ public partial class PruebaBrayanCaviedesContext : DbContext
     {
         modelBuilder.Entity<Paciente>(entity =>
         {
-            entity.HasKey(e => e.NumeroDocumento).HasName("PK__paciente__A42025894FA551CC");
+            entity.HasKey(e => e.Id).HasName("PK__paciente__A42025894FA551CC");
 
             entity.ToTable("pacientes");
 
+            entity.Property(e => e.NumeroDocumento)
+                .HasMaxLength(15)
+                .IsUnicode(false);
             entity.Property(e => e.Apellido)
                 .HasMaxLength(50)
                 .IsUnicode(false);

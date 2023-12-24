@@ -74,3 +74,4 @@ C:\Users\maria\source\repos\prueba_brayan_caviedes\prueba_brayan_caviedes\obj\De
 C:\Users\maria\source\repos\prueba_brayan_caviedes\prueba_brayan_caviedes\obj\Debug\net7.0\prueba_brayan_caviedes.pdb
 C:\Users\maria\source\repos\prueba_brayan_caviedes\prueba_brayan_caviedes\obj\Debug\net7.0\prueba_brayan_caviedes.genruntimeconfig.cache
 C:\Users\maria\source\repos\prueba_brayan_caviedes\prueba_brayan_caviedes\obj\Debug\net7.0\ref\prueba_brayan_caviedes.dll
+C:\Users\maria\source\repos\prueba_brayan_caviedes\prueba_brayan_caviedes\obj\Debug\net7.0\prueba_brayan_caviedes.sourcelink.json
